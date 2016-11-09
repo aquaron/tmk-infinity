@@ -44,7 +44,7 @@ cd $_dir
 if [ "$_tag" = "example" ]; then 
     ### look for file in examples dir and copy over to build dir and /data for user
     if [ -s "${_exfile}" ]; then
-        cp ${_exfile} ${_datadir}
+        cp ${_exfile} ${_datafile}
         cp ${_exfile} ${_file}
     else
         echo -e "ERROR: example file $_file does not exist for keyboard $_dir sorry!"
