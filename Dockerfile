@@ -1,19 +1,21 @@
 FROM ubuntu
 
-ENV _root /tmk_keyboard/keyboard/infinity 
+ENV _root /tmk_keyboard/keyboard
 
 RUN apt-get update \
- && apt-get upgrade -y \
  && apt-get install -y \
   git make \
+  gcc-avr avr-libc \
   gcc-arm-none-eabi \
   gcc-arm-linux-gnueabi \
   libusb-1.0-0-dev \
- && rm -r /var/lib/apt/lists/* \
- && git clone https://github.com/tmk/tmk_keyboard.git
+ && git clone https://github.com/tmk/tmk_keyboard.git \
+ && apt-get remove -y git \
+ && apt-get -y autoremove \
+ && rm -r /var/lib/apt/lists/*
 
-COPY bin $_root
+COPY bin $_root/examples
 
 WORKDIR $_root
 
-ENTRYPOINT [ "./runme.sh" ]
+ENTRYPOINT [ "./examples/runme.sh" ]
