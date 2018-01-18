@@ -3,7 +3,7 @@
 function getvol() { echo $(grep ' /data ' /proc/self/mountinfo | cut -f 4 -d" "); }
 _vol=$(getvol)
 
-if [ ! "${_vol}" ]; then 
+if [ ! "${_vol}" ]; then
     echo -e "ERROR: you need run Docker with the -v parameter, try:"
     echo "    docker run --rm -v /tmp:/data aquaron/tmk-infinity example"
     exit 1
@@ -41,7 +41,7 @@ fi
 
 cd $_dir
 
-if [ "$_tag" = "example" ]; then 
+if [ "$_tag" = "example" ]; then
     ### look for file in examples dir and copy over to build dir and /data for user
     if [ -s "${_exfile}" ]; then
         cp ${_exfile} ${_datafile}
@@ -57,7 +57,7 @@ else
         echo -e "ERROR: ${_datafile} not found\nCheck ${_vol}/$_file to see if it's there"
         exit 1
     fi
-fi 
+fi
 
 if [ ! -s "${_file}" ]; then
     echo "ERROR: ${_file} not found. Abort!"

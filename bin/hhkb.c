@@ -61,7 +61,7 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
      * `-----------------------------------------------------------'
      *       |   |     |                       |     |   |
      *       `-------------------------------------------'
-     */ 
+     */
     [2] = \
     KEYMAP(TRNS,F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL,   \
            TRNS,FN5 ,FN6 ,END ,TRNS,TRNS,HOME,PGDN,PGUP,END ,TRNS,TRNS,TRNS, TRNS,      \
@@ -81,7 +81,7 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
      * `-----------------------------------------------------------'
      *       |   |     |                       |     |   |
      *       `-------------------------------------------'
-     */ 
+     */
     [3] = \
     KEYMAP(TRNS,TRNS,TRNS,TRNS,END ,TRNS,TRNS,TRNS,TRNS,TRNS,HOME,TRNS,TRNS,TRNS,DEL,   \
            TRNS,FN5 ,FN6 ,END ,TRNS,TRNS,TRNS,PGUP,TRNS,TRNS,TRNS,TRNS,TRNS, TRNS,      \
